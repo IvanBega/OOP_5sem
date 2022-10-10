@@ -1,0 +1,33 @@
+
+_
+java:S2184E"BCast one of the operands of this division operation to a "double".(“—Õ‡8æ¯ğ§»0
+_
+java:S2184O"BCast one of the operands of this division operation to a "double".(½Íİä8ç¯ğ§»0
+d
+java:S2184u"BCast one of the operands of this division operation to a "double".(Ô–‰íûÿÿÿÿ8ç¯ğ§»0
+_
+java:S2184y"BCast one of the operands of this division operation to a "double".(§‹¬À8ç¯ğ§»0
+_
+java:S2184~"BCast one of the operands of this division operation to a "double".(‹‘›8ç¯ğ§»0
+`
+java:S2184„"BCast one of the operands of this division operation to a "double".(§…ÇÌ8è¯ğ§»0
+H
+java:S1168#"+Return an empty collection instead of null.(¥¹ï8¨°ğ§»0
+H
+java:S1168&"+Return an empty collection instead of null.(¥¹ï8ª°ğ§»0
+C
+java:S2185E"&Remove this silly call to "Math.floor"(“—Õ‡8³°ğ§»0
+C
+java:S2185O"&Remove this silly call to "Math.floor"(½Íİä8·°ğ§»0
+{
+java:S2142Z"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ÉÀî§»0
+H
+java:S2185u"&Remove this silly call to "Math.floor"(Ô–‰íûÿÿÿÿ8Â°ğ§»0
+C
+java:S2185y"&Remove this silly call to "Math.floor"(§‹¬À8Ä°ğ§»0
+C
+java:S2185~"&Remove this silly call to "Math.floor"(‹‘›8Å°ğ§»0
+D
+java:S2185„"&Remove this silly call to "Math.floor"(§…ÇÌ8Ç°ğ§»0
+|
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ÜÀî§»0
