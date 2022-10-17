@@ -1,0 +1,15 @@
+
+k
+java:S3014"IRemove this use of "ThreadGroup". Prefer the use of "ThreadPoolExecutor".(²Ï…øüÿÿÿÿ8İÁÉ¼0
+e
+java:S3014"IRemove this use of "ThreadGroup". Prefer the use of "ThreadPoolExecutor".(¿‹½08İÁÉ¼0
+k
+java:S3014	"IRemove this use of "ThreadGroup". Prefer the use of "ThreadPoolExecutor".(—¯ôüÿÿÿÿ8İÁÉ¼0
+{
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8òÁÉ¼0
+{
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8óÁÉ¼0
+{
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ôÁÉ¼0
+{
+java:S2142'"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8öÁÉ¼0
