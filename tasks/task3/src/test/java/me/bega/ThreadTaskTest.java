@@ -1,13 +1,8 @@
 package me.bega;
 
-/*import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;*/
 import org.junit.jupiter.api.*;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 
 
 public class ThreadTaskTest {
@@ -25,7 +20,7 @@ public class ThreadTaskTest {
     }
 
     @Test
-    public void testThreadTaskMethods(){
+    public void testThreadTaskMethods() throws IOException {
         ThreadGroup threadGroup1 = new ThreadGroup("FIRST GROUP");
         ThreadGroup threadGroup2 = new ThreadGroup(threadGroup1, "SECOND GROUP");
         ThreadGroup threadGroup3 = new ThreadGroup(threadGroup2, "THIRD GROUP");
@@ -67,31 +62,31 @@ public class ThreadTaskTest {
         threadTask.printTreadsInfo(threadGroup1);
         long endTime = System.currentTimeMillis() + 15000;
         while (System.currentTimeMillis() < endTime);
-        Assertions.assertEquals("FIRST GROUP\n" +
-                "Threads at FIRST GROUP:\n" +
-                "  firstThread\n" +
-                "Thread groups in FIRST GROUP:\n" +
-                "  SECOND GROUP\n" +
-                "  Threads at SECOND GROUP:\n" +
-                "    secondThread\n" +
-                "    thirdThread\n" +
-                "  Thread groups in SECOND GROUP:\n" +
-                "    THIRD GROUP\n" +
-                "    Threads at THIRD GROUP:\n" +
-                "      fourthThread\n" +
-                "FIRST GROUP\n" +
-                "Thread groups in FIRST GROUP:\n" +
-                "  SECOND GROUP\n" +
-                "  Thread groups in SECOND GROUP:\n" +
-                "    THIRD GROUP\n" +
-                "    Threads at THIRD GROUP:\n" +
-                "      fourthThread\n" +
-                "FIRST GROUP\n" +
-                "Thread groups in FIRST GROUP:\n" +
-                "  SECOND GROUP\n" +
-                "  Thread groups in SECOND GROUP:\n" +
-                "    THIRD GROUP\n" +
-                "    Threads at THIRD GROUP:\n" +
-                "      fourthThread\n", outContent.toString());
+        Assertions.assertEquals("FIRST GROUP\r\n" +
+                "Threads at FIRST GROUP:\r\n" +
+                "  firstThread\r\n" +
+                "Thread groups in FIRST GROUP:\r\n" +
+                "  SECOND GROUP\r\n" +
+                "  Threads at SECOND GROUP:\r\n" +
+                "    secondThread\r\n" +
+                "    thirdThread\r\n" +
+                "  Thread groups in SECOND GROUP:\r\n" +
+                "    THIRD GROUP\r\n" +
+                "    Threads at THIRD GROUP:\r\n" +
+                "      fourthThread\r\n" +
+                "FIRST GROUP\r\n" +
+                "Thread groups in FIRST GROUP:\r\n" +
+                "  SECOND GROUP\r\n" +
+                "  Thread groups in SECOND GROUP:\r\n" +
+                "    THIRD GROUP\r\n" +
+                "    Threads at THIRD GROUP:\r\n" +
+                "      fourthThread\r\n" +
+                "FIRST GROUP\r\n" +
+                "Thread groups in FIRST GROUP:\r\n" +
+                "  SECOND GROUP\r\n" +
+                "  Thread groups in SECOND GROUP:\r\n" +
+                "    THIRD GROUP\r\n" +
+                "    Threads at THIRD GROUP:\r\n" +
+                "      fourthThread\r\n", outContent.toString());
     }
 }
