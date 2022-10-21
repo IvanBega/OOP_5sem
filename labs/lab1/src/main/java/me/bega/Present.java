@@ -8,11 +8,6 @@ import java.util.List;
 
 public class Present implements Openable{
     private String name;
-
-    public List<Candy> getCandies() {
-        return candies;
-    }
-
     public void setCandies(List<Candy> candies) {
         this.candies = candies;
     }
@@ -23,6 +18,7 @@ public class Present implements Openable{
     private List<Candy> candies;
 
     public Present(String name) {
+        this.name = name;
         candies = new ArrayList<>();
     }
     public Present(String name, List<Candy> candies) {
@@ -53,6 +49,9 @@ public class Present implements Openable{
             }
         }
         return result;
+    }
+    public List<Candy> getCandies() {
+        return candies;
     }
 
     @Override

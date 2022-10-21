@@ -5,49 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59833ef-0900-47f1-a14e-c699961c6057" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/bega/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/bega/candies/Candy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/bega/candies/CandyType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/me/bega/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../tasks/task3/.idea/sonarlint/issuestore/2/d/2dc5f2fd194ae6540edc1509791ed136b2c37f64" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../tasks/task3/.idea/sonarlint/issuestore/4/a/4a10f037b1c9a8f9e4831ffbd05bad5efe129af9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../tasks/task3/.idea/sonarlint/issuestore/c/d/cdcd4f8b8ecb6ec1a55da35e0dc85980607b3a6f" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/7.4/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/7.4/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/7.4/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/7.4/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/sonarlint/issuestore/e/4/e44a8606ce010ad9b89aafdfcee2ab49afbf6d10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/sonarlint/issuestore/f/0/f07866736216be0ee2aba49e392191aeae700a35" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tasks/task3/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../tasks/task3/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/bega/Present.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bega/Present.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/bega/candies/CandyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bega/candies/CandyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/bega/PresentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/bega/PresentTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +54,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "go.import.settings.migrated": "true",
+    "last_opened_file_path": "C:/DOCS/Учеба/5 semester/OOP/labs/lab1",
     "ruby.rails.projectView.checked": "true"
   }
 }]]></component>
@@ -113,7 +75,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666128880462</updated>
-      <workItem from="1666128881675" duration="4641000" />
+      <workItem from="1666128881675" duration="4667000" />
+      <workItem from="1666136061956" duration="13000" />
+      <workItem from="1666377278941" duration="631000" />
     </task>
     <servers />
   </component>
