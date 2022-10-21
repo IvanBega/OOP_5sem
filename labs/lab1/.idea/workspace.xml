@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b59833ef-0900-47f1-a14e-c699961c6057" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/bega/Present.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bega/Present.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/bega/candies/CandyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bega/candies/CandyType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/me/bega/PresentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/bega/PresentTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +52,9 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "go.import.settings.migrated": "true",
     "last_opened_file_path": "C:/DOCS/Учеба/5 semester/OOP/labs/lab1",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.26551723",
     "ruby.rails.projectView.checked": "true"
   }
 }]]></component>
@@ -77,7 +77,8 @@
       <updated>1666128880462</updated>
       <workItem from="1666128881675" duration="4667000" />
       <workItem from="1666136061956" duration="13000" />
-      <workItem from="1666377278941" duration="631000" />
+      <workItem from="1666377278941" duration="854000" />
+      <workItem from="1666380278532" duration="78000" />
     </task>
     <servers />
   </component>

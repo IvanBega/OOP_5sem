@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema" 
+           elementFormDefault = "qualified">	 
+           
+    <xs:element name = "gems" type = "gemInstance"/>
+    <xs:complexType name = "gemInstance">
+        <xs:sequence>
+            <xs:element name = "gem" type = "gem" maxOccurs = "unbounded"/>
+        </xs:sequence>
+        <xs:attribute name = "name" type = "xs:string" use = "required"/>
+    </xs:complexType>                     
+                 
+    <xs:complexType name = "gem">
+        <xs:sequence>
+            <xs:element name = "name" type = "xs:string"/>
+            <xs:element name = "preciousness" type = "xs:boolean"/>
+            <xs:element name = "origin" type = "xs:string"/>
+            <xs:element name = "visualParameters">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name = "color" type = "xs:string"/>
+                        <xs:element name = "opacity" type = "xs:int"/>
+                        <xs:element name = "edging" type = "xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name = "value" type = "xs:double"/>
+        </xs:sequence>
+        <xs:attribute name = "id" type = "xs:ID" use = "required"/>
+    </xs:complexType>    
+
+	<xs:simpleType name="color">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value = "Yellow"/>
+			<xs:enumeration value = "Blue"/>
+			<xs:enumeration value = "Red"/>
+			<xs:enumeration value = "Black"/>
+			<xs:enumeration value = "White"/>
+			<xs:enumeration value = "Brown"/>
+			<xs:enumeration value = "Green"/>
+			<xs:enumeration value = "Purple"/>
+			<xs:enumeration value = "Orange"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="opacity">
+		<xs:restriction base = "xs:int">
+			<xs:minInclusive value = "0"/>
+			<xs:maxInclusive value = "100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="edging">
+		<xs:restriction base = "xs:int">
+			<xs:minInclusive value = "4"/>
+			<xs:maxInclusive value = "15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="value">
+		<xs:restriction base = "xs:double">
+			<xs:minInclusive value = "0.01"/>
+			<xs:maxInclusive value = "1000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gems name = "Gem"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="Gem.xsd">
+    
+    <gem id = "gem1">
+         <name>Jade</name>
+         <preciousness>true</preciousness>
+         <origin>Spain</origin>
+         <visualParameters>
+             <color>Yellow</color>
+             <opacity>54</opacity>
+             <edging>5</edging>
+         </visualParameters>
+         <value>0.5</value>
+    </gem>
+
+    <gem id = "gem2">
+         <name>Opal</name>
+         <preciousness>true</preciousness>
+         <origin>Denmark</origin>
+         <visualParameters>
+             <color>White</color>
+             <opacity>99</opacity>
+             <edging>15</edging>
+         </visualParameters>
+         <value>55</value>
+    </gem>
+
+    <gem id = "gem3">
+         <name>Beryl</name>
+         <preciousness>false</preciousness>
+         <origin>Sweden</origin>
+         <visualParameters>
+             <color>Green</color>
+             <opacity>10</opacity>
+             <edging>10</edging>
+         </visualParameters>
+         <value>22</value>
+    </gem>
+
+    <gem id = "gem4">
+         <name>Diamond</name>
+         <preciousness>true</preciousness>
+         <origin>Ukraine</origin>
+         <visualParameters>
+             <color>Purple</color>
+             <opacity>41</opacity>
+             <edging>11</edging>
+         </visualParameters>
+         <value>32.1</value>
+    </gem>                                              
+     
+</gems> 
