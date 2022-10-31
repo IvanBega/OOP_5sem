@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="me.bega.MichaelScottQueueTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-31T15:43:28" hostname="DESKTOP-FMSR279" time="0.016">
+  <properties/>
+  <testcase name="testEnqueueAndDequeueOneElement()" classname="me.bega.MichaelScottQueueTest" time="0.016"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
