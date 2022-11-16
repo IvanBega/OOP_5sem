@@ -1,2 +1,4 @@
-package me.bega.cyclicbarrier;public class CyclicBarrierTest {
+package me.bega.cyclicbarrier;
+
+public class CyclicBarrierTest {
 }

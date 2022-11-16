@@ -1,2 +1,4 @@
-package me.bega;public class Main {
+package me.bega;
+
+public class Main {
 }
