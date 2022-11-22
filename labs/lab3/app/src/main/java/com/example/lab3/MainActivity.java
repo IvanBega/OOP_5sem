@@ -25,6 +25,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartButtonClick(View view) {
-        //board.drawCells(view.);
+        gameView.eraseCells();
     }
 }
