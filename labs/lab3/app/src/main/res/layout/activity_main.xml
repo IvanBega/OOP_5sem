@@ -52,7 +52,8 @@
                 android:layout_gravity="center"
                 android:background="#fff"
                 android:text="@string/start"
-                android:textColor="#757575">
+                android:textColor="#757575"
+                android:onClick="onStartButtonClick">
 
             </Button>
         </LinearLayout>

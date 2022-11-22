@@ -1,4 +1,4 @@
-package com.example.lab3.models.gameboard;
+package com.example.lab3.models.cell;
 
 public class Cell {
     private CellColor color;
