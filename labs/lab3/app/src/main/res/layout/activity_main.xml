@@ -6,13 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/window_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#eff2ff"
+        android:gravity="center">
 
+
+        <LinearLayout
+            android:id="@+id/game_layout"
+            android:background="@drawable/border"
+            android:layout_width="340dp"
+            android:layout_height="340dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+        </LinearLayout>
+
+        <Space android:layout_width="0dp" android:layout_height="20dp">
+        </Space>
+
+        <TextView
+            android:id="@+id/game_status"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textAlignment="center"
+            android:textSize="20pt"/>
+
+        <Space android:layout_width="0dp" android:layout_height="20dp">
+        </Space>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/new_game_button"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="#fff"
+                android:text="@string/start"
+                android:textColor="#757575">
+
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
