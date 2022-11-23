@@ -15,7 +15,6 @@ import java.util.concurrent.Future;
 public class GameView extends View {
     private final ExecutorService executor = newFixedThreadPool(2);
     private final int BOARD_SIZE = 8;
-    private boolean flag = true;
     private GameBoard board = new GameBoard(BOARD_SIZE);
     public GameView(Context context) {
         super(context);
@@ -39,6 +38,7 @@ public class GameView extends View {
                     Log.e("Touch exception", Arrays.toString(e.getStackTrace()));
                     Thread.currentThread().interrupt();
                 }
+                invalidate();
                 return true;
             }
         });
