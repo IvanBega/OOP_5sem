@@ -1,6 +1,6 @@
 package me.bega.reentrantlock;
 
-public class CustomReentrantLock {
+public class CustomReentrantLock implements ReentrantLock {
     private int count;
     private long currentThreadID;
 
@@ -12,7 +12,9 @@ public class CustomReentrantLock {
         if (count == 0) {
             count++;
             currentThreadID = Thread.currentThread().getId();
-        } else if (currentThreadID != Thread.currentThread().getId()) {
+        } else if (count > 0 && currentThreadID == Thread.currentThread().getId()) {
+            count++;
+        } else {
             while (currentThreadID != Thread.currentThread().getId()) {
                 try {
                     wait();
@@ -22,8 +24,6 @@ public class CustomReentrantLock {
                     e.printStackTrace();
                 }
             }
-        } else {
-            count++;
         }
     }
 

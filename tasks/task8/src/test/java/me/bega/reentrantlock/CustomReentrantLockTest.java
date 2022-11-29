@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CustomReentrantLockTest {
-    private CustomReentrantLock lock;
+    private ReentrantLock lock;
     @BeforeEach
     public void setup() {
         lock = new CustomReentrantLock();
@@ -37,10 +37,11 @@ public class CustomReentrantLockTest {
         lock.unlock();
     }
     @Test
-    public void testTryLockShouldReturnFalse() throws InterruptedException {
+    public void testTryLockShouldReturnFalse() {
         lock.lock();
         lock.lock();
         lock.unlock();
         Assertions.assertFalse(lock.tryLock());
+        lock.unlock();
     }
 }
