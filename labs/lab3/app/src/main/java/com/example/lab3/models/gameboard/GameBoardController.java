@@ -1,7 +1,6 @@
 package com.example.lab3.models.gameboard;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
 
 import com.example.lab3.models.Move;
 import com.example.lab3.models.MoveType;
@@ -46,47 +45,40 @@ public class GameBoardController {
         }
     }
     private void analyzeMove(Position from, Position to) {
-        if (canMoveCheckerToFreePosition(from, to)) {
-            gameBoard.setCell(from.y,from.x, BoardCellState.FREE);
-            gameBoard.setCell(to.y, to.x, BoardCellState.OCCUPIED_BLACK);
+        /*boolean isAttacking = gameBoard.isMoveAttacking(from, to);
+        if (gameBoard.canGoForward(from, to)) {
+            gameBoard.performMove(new Move(from, to), MoveType.PLAYER);
             makeBotMove();
             return;
         }
-        if (canMoveCheckerOverWhite(from, to)) {
-            // 4 3 -> 2 1, 6 1
-                //    3 2, 5 2
-            gameBoard.setCell((from.y + to.y) / 2, (from.x + to.x) / 2,  BoardCellState.FREE);
-            gameBoard.setCell(from.y, from.x, BoardCellState.FREE);
-            gameBoard.setCell(to.y,to.x, BoardCellState.OCCUPIED_BLACK);
+        if (gameBoard.canAttackForward(from, to)) {
+            gameBoard.performMove(new Move(from, to), MoveType.PLAYER);
+            makeBotMove();
+        }*/
+        if (gameBoard.canPerformMove(from, to)) {
+            gameBoard.performMove(new Move(from, to), MoveType.PLAYER);
             makeBotMove();
         }
     }
 
     private void makeBotMove() {
         Move move = bot.nextMove();
-        if (move.isAttacking()) {
-            gameBoard.setCell(move.getFrom().y, move.getFrom().x, BoardCellState.FREE);
-            gameBoard.setCell((move.getFrom().y + move.getTo().y)/2,(move.getFrom().x+move.getTo().x)/2, BoardCellState.FREE);
-            gameBoard.setCell(move.getTo().y,move.getTo().x, BoardCellState.OCCUPIED_WHITE);
-        } else {
-            gameBoard.setCell(move.getFrom().y, move.getFrom().x, BoardCellState.FREE);
-            gameBoard.setCell(move.getTo().y, move.getTo().x, BoardCellState.OCCUPIED_WHITE);
-        }
+        gameBoard.performMove(move, MoveType.BOT);
     }
-    private boolean canMoveCheckerToFreePosition(Position from, Position to) {
+    /*private boolean canMoveCheckerToFreePosition(Position from, Position to) {
         if (gameBoard.cellAt(to.y, to.x) != BoardCellState.FREE) return false;
         if (from.y - 1 != to.y) return false;
         if (from.x + 1 != to.x && from.x - 1 != to.x) return false;
         return true;
-    }
-    private boolean canMoveCheckerOverWhite(Position from, Position to) {
+    }*/
+    /*private boolean canMoveCheckerOverWhite(Position from, Position to) {
         if (from.y - 2 != to.y) return false;
         if (from.x + 2 != to.x && from.x - 2 != to.x) return false;
         if (from.x + 2 == to.x && gameBoard.cellAt(from.y - 1,from.x + 1) == BoardCellState.OCCUPIED_WHITE) return true;
         if (from.x - 2 == to.x && gameBoard.cellAt(from.y - 1, from.x - 1) == BoardCellState.OCCUPIED_WHITE) return true;
         return false;
 
-    }
+    }*/
     private boolean canAttackSecondTime(Position pos) {
         return false;
     }

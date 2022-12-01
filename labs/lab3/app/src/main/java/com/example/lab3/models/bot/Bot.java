@@ -51,9 +51,9 @@ public class Bot {
             for (int j = 0; j < gameBoard.getBoardSize(); j++) {
                 if (gameBoard.cellAt(j, i) == BoardCellState.OCCUPIED_WHITE) {
                     if (j + 1 < gameBoard.getBoardSize() && i + 1 < gameBoard.getBoardSize() && gameBoard.cellAt(j+1, i+1) == BoardCellState.FREE) {
-                        list.add(new Move(new Position(i, j), new Position(i+1,j+1), false, false));
+                        list.add(new Move(new Position(i, j), new Position(i+1,j+1)));
                     } else if (j + 1 <= gameBoard.getBoardSize() && i - 1 >= 0 && gameBoard.cellAt(j+1, i-1) == BoardCellState.FREE) {
-                        list.add(new Move(new Position(i, j), new Position(i-1,j+1), false, true));
+                        list.add(new Move(new Position(i, j), new Position(i-1,j+1)));
                     }
                 }
             }
@@ -68,11 +68,11 @@ public class Bot {
                     if (i + 2 < gameBoard.getBoardSize() && j + 2 < gameBoard.getBoardSize() &&
                             gameBoard.cellAt(j+1, i+1) == BoardCellState.OCCUPIED_BLACK &&
                             gameBoard.cellAt(j+2, i+2) == BoardCellState.FREE) {
-                        moves.add(new Move(new Position(i, j), new Position(i+2, j+2), true, false));
+                        moves.add(new Move(new Position(i, j), new Position(i+2, j+2)));
                     } else if (i - 2 > 0 && j + 2 < gameBoard.getBoardSize() &&
                             gameBoard.cellAt(j+1, i-1) == BoardCellState.OCCUPIED_BLACK &&
                             gameBoard.cellAt(j+2, i-2) == BoardCellState.FREE) {
-                        moves.add(new Move(new Position(i, j), new Position(i-2, j+2), true, true));
+                        moves.add(new Move(new Position(i, j), new Position(i-2, j+2)));
                     }
                 }
             }
