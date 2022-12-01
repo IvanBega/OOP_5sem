@@ -2,13 +2,13 @@ package com.example.lab3;
 
 import android.view.MotionEvent;
 
-import com.example.lab3.models.gameboard.GameBoard;
+import com.example.lab3.models.gameboard.GameBoardController;
 
 public class OnTouchTask implements Runnable {
     private final MotionEvent event;
-    private final GameBoard gameBoard;
+    private final GameBoardController gameBoard;
 
-    OnTouchTask(MotionEvent event, GameBoard gameBoard) {
+    OnTouchTask(MotionEvent event, GameBoardController gameBoard) {
         this.event = event;
         this.gameBoard = gameBoard;
     }

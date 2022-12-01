@@ -2,13 +2,9 @@ package com.example.lab3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
-
-import com.example.lab3.models.gameboard.GameBoard;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout gameLayout;

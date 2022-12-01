@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.lab3.models.gameboard.GameBoard;
+import com.example.lab3.models.gameboard.GameBoardController;
 
 import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
@@ -15,7 +15,7 @@ import java.util.concurrent.Future;
 public class GameView extends View {
     private final ExecutorService executor = newFixedThreadPool(2);
     private final int BOARD_SIZE = 8;
-    private GameBoard board = new GameBoard(BOARD_SIZE);
+    private GameBoardController boardController = new GameBoardController(BOARD_SIZE);
     public GameView(Context context) {
         super(context);
         assignTouchListener();
@@ -23,7 +23,7 @@ public class GameView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        board.drawCells(canvas);
+        boardController.drawCells(canvas);
     }
     public void eraseCells() {
         invalidate();
@@ -31,7 +31,7 @@ public class GameView extends View {
     private void assignTouchListener() {
         setOnTouchListener(new OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
-                Future touchFuture = executor.submit(new OnTouchTask(event, board));
+                Future touchFuture = executor.submit(new OnTouchTask(event, boardController));
                 try {
                     touchFuture.get();
                 } catch (Exception e) {
