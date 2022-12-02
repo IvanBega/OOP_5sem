@@ -1,6 +1,8 @@
 package com.example.lab3.models.gameboard;
 
 import android.graphics.Canvas;
+import android.view.View;
+import android.widget.EditText;
 
 import com.example.lab3.models.Move;
 import com.example.lab3.models.MoveType;
@@ -45,16 +47,6 @@ public class GameBoardController {
         }
     }
     private void analyzeMove(Position from, Position to) {
-        /*boolean isAttacking = gameBoard.isMoveAttacking(from, to);
-        if (gameBoard.canGoForward(from, to)) {
-            gameBoard.performMove(new Move(from, to), MoveType.PLAYER);
-            makeBotMove();
-            return;
-        }
-        if (gameBoard.canAttackForward(from, to)) {
-            gameBoard.performMove(new Move(from, to), MoveType.PLAYER);
-            makeBotMove();
-        }*/
         if (gameBoard.canPerformMove(from, to)) {
             gameBoard.performMove(new Move(from, to), MoveType.PLAYER);
             makeBotMove();
@@ -63,22 +55,12 @@ public class GameBoardController {
 
     private void makeBotMove() {
         Move move = bot.nextMove();
+        if (move == null) {
+            System.out.println("No bot moves!");
+        }
         gameBoard.performMove(move, MoveType.BOT);
     }
-    /*private boolean canMoveCheckerToFreePosition(Position from, Position to) {
-        if (gameBoard.cellAt(to.y, to.x) != BoardCellState.FREE) return false;
-        if (from.y - 1 != to.y) return false;
-        if (from.x + 1 != to.x && from.x - 1 != to.x) return false;
-        return true;
-    }*/
-    /*private boolean canMoveCheckerOverWhite(Position from, Position to) {
-        if (from.y - 2 != to.y) return false;
-        if (from.x + 2 != to.x && from.x - 2 != to.x) return false;
-        if (from.x + 2 == to.x && gameBoard.cellAt(from.y - 1,from.x + 1) == BoardCellState.OCCUPIED_WHITE) return true;
-        if (from.x - 2 == to.x && gameBoard.cellAt(from.y - 1, from.x - 1) == BoardCellState.OCCUPIED_WHITE) return true;
-        return false;
 
-    }*/
     private boolean canAttackSecondTime(Position pos) {
         return false;
     }

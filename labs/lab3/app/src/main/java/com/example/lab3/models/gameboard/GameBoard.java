@@ -16,6 +16,8 @@ public class GameBoard {
     private Paint blackChPaint = new Paint();
     private int boardSize;
     private int cellSizePx;
+    private int whiteCheckers = 3 * (boardSize / 2);
+    private int blackCheckers = 3 * (boardSize / 2);
 
     public GameBoard(int boardSize) {
         this.boardSize = boardSize;
@@ -82,7 +84,6 @@ public class GameBoard {
             }
         }
     }
-
     private void drawCheckers(Canvas canvas) {
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {

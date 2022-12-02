@@ -20,7 +20,4 @@ public class MainActivity extends AppCompatActivity {
         gameLayout.addView(gameView);
     }
 
-    public void onStartButtonClick(View view) {
-        gameView.eraseCells();
-    }
 }

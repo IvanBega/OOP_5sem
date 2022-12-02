@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 
 import com.example.lab3.models.gameboard.GameBoardController;
 
@@ -15,15 +16,17 @@ import java.util.concurrent.Future;
 public class GameView extends View {
     private final ExecutorService executor = newFixedThreadPool(2);
     private final int BOARD_SIZE = 8;
-    private GameBoardController boardController = new GameBoardController(BOARD_SIZE);
+    private GameBoardController boardController;
     public GameView(Context context) {
         super(context);
         assignTouchListener();
+        boardController = new GameBoardController(BOARD_SIZE);
     }
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         boardController.drawCells(canvas);
+
     }
     public void eraseCells() {
         invalidate();

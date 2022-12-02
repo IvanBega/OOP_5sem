@@ -18,19 +18,6 @@ public class Bot {
     public Move nextMove() {
         List<Move> routineMoves = getRoutineMoves();
         List<Move> attackMoves = getAttackMoves();
-        /*for (Move m : routineMoves) {
-            System.out.println(m.getFrom().y + " " + m.getFrom().x + " -> " +
-                    m.getTo().y + " " + m.getTo().x);
-        }
-        if (attackMoves.size() == 0) {
-            System.out.println("No attacking moves for bot! :C");
-        } else {
-            System.out.println("Attacking moves are the following:");
-            for (Move m : attackMoves) {
-                System.out.println(m.getFrom().y + " " + m.getFrom().x + " -> " +
-                        m.getTo().y + " " + m.getTo().x);
-            }
-        }*/
         int size = attackMoves.size();
         Random r = new Random();
         if (size > 0) {
@@ -44,7 +31,6 @@ public class Bot {
         }
         return null;
     }
-
     private List<Move> getRoutineMoves() {
         List<Move> list = new ArrayList<>();
         for (int i = 0; i < gameBoard.getBoardSize(); i++) {
