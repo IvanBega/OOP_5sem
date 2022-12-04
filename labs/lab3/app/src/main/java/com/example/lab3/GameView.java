@@ -28,9 +28,6 @@ public class GameView extends View {
         boardController.drawCells(canvas);
 
     }
-    public void eraseCells() {
-        invalidate();
-    }
     private void assignTouchListener() {
         setOnTouchListener(new OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {

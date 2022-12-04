@@ -1,6 +1,7 @@
 package com.example.lab3.models.gameboard;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.example.lab3.models.Move;
@@ -14,21 +15,30 @@ public class GameBoard {
     private Paint blackPaint = new Paint();
     private Paint whiteChPaint = new Paint();
     private Paint blackChPaint = new Paint();
+    private Paint textPaint = new Paint();
     private int boardSize;
     private int cellSizePx;
-    private int whiteCheckers = 3 * (boardSize / 2);
-    private int blackCheckers = 3 * (boardSize / 2);
+    private int whiteCheckers;
+    private int blackCheckers;
 
     public GameBoard(int boardSize) {
         this.boardSize = boardSize;
-        whitePaint.setARGB(0, 0, 0, 0);
-        blackPaint.setARGB(255, 0, 0, 0);
-        whiteChPaint.setARGB(200, 200, 200, 200);
-        blackChPaint.setARGB(200, 128, 128, 128);
+        whiteCheckers = 3 * (boardSize / 2);
+        blackCheckers = 3 * (boardSize / 2);
+
+        initPaint();
         cells = new BoardCellState[boardSize][boardSize];
         initCells();
     }
-
+    private void initPaint() {
+        whitePaint.setColor(Color.WHITE);
+        blackPaint.setColor(Color.BLACK);
+        whiteChPaint.setColor(Color.LTGRAY);
+        blackChPaint.setColor(Color.LTGRAY);
+        blackChPaint.setAlpha(160);
+        textPaint.setColor(Color.BLACK);
+        textPaint.setTextSize(100);
+    }
     public BoardCellState cellAt(int x, int y) {
         if (x < 0 || x >= boardSize || y < 0 || y >= boardSize) return null;
 
@@ -39,11 +49,14 @@ public class GameBoard {
         return boardSize;
     }
 
-    public void setCell(int x, int y, BoardCellState state) {
-        cells[x][y] = state;
-    }
-
     public void drawCells(Canvas canvas) {
+        if (whiteCheckers <= 0) {
+            canvas.drawText("BLACK WON", 100, canvas.getWidth() / 2, textPaint);
+            return;
+        } else if (blackCheckers <= 0){
+            canvas.drawText("WHITE WON", 100, canvas.getWidth() / 2, textPaint);
+            return;
+        }
         cellSizePx = canvas.getWidth() / boardSize;
         drawGrid(canvas);
         drawCheckers(canvas);
@@ -70,7 +83,6 @@ public class GameBoard {
             }
         }
     }
-
     private void drawGrid(Canvas canvas) {
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
@@ -108,15 +120,12 @@ public class GameBoard {
             }
         }
     }
-
     public int getCellSizePx() {
         return cellSizePx;
     }
-
     public void performMove(Move move, MoveType type) {
         BoardCellState checkerType = cells[move.getFrom().y][move.getFrom().x];
         boolean isAttacking = isMoveAttacking(move.getFrom(), move.getTo());
-        System.out.println(isAttacking);
         if (move.getTo().y == 0 && isBlack(checkerType)) {
             checkerType = BoardCellState.OCCUPIED_BLACK_QUEEN;
         }
@@ -127,10 +136,18 @@ public class GameBoard {
             cells[move.getFrom().y][move.getFrom().x] = BoardCellState.FREE;
             cells[(move.getFrom().y + move.getTo().y) / 2][(move.getFrom().x + move.getTo().x) / 2] = BoardCellState.FREE;
             cells[move.getTo().y][move.getTo().x] = checkerType;
+
+            if (isWhite(checkerType)) {
+                blackCheckers--;
+            } else {
+                whiteCheckers--;
+            }
         } else {
             cells[move.getFrom().y][move.getFrom().x] = BoardCellState.FREE;
             cells[move.getTo().y][move.getTo().x] = checkerType;
         }
+
+        System.out.println("White = " + whiteCheckers + " | Black = " + blackCheckers);
     }
     public boolean isMoveAttacking(Position from, Position to) {
         return canAttackForward(from, to) ||
@@ -190,10 +207,13 @@ public class GameBoard {
         return canAttackForward(from, to) || canGoForward(from, to) ||
                 canGoBackward(from, to) || canAttackBackward(from, to);
     }
-    private boolean isBlack(BoardCellState state) {
+    public boolean isBlack(BoardCellState state) {
         return state == BoardCellState.OCCUPIED_BLACK || state == BoardCellState.OCCUPIED_BLACK_QUEEN;
     }
-    private boolean isWhite(BoardCellState state) {
+    public boolean isWhite(BoardCellState state) {
         return state == BoardCellState.OCCUPIED_WHITE || state == BoardCellState.OCCUPIED_WHITE_QUEEN;
+    }
+    public void setWhiteCheckerCount(int i) {
+        whiteCheckers = 0;
     }
 }

@@ -31,10 +31,7 @@ public class GameBoardController {
         if (move == MoveType.BOT) {
             return;
         }
-        //bot.nextMove();
-        //System.out.println(x + " " + y);
         Position pos = getCellPositionByCoords((int)x, (int)y);
-        System.out.println(pos.y + " " + pos.x);
         if (selectedCellPos != null) {
             if (gameBoard.cellAt(pos.y,pos.x) == BoardCellState.OCCUPIED_BLACK) {
                 selectedCellPos = new Position(pos.x, pos.y);
@@ -56,14 +53,12 @@ public class GameBoardController {
     private void makeBotMove() {
         Move move = bot.nextMove();
         if (move == null) {
-            System.out.println("No bot moves!");
+            gameBoard.setWhiteCheckerCount(0);
+            return;
         }
         gameBoard.performMove(move, MoveType.BOT);
     }
 
-    private boolean canAttackSecondTime(Position pos) {
-        return false;
-    }
     public void drawCells(Canvas canvas) {
         gameBoard.drawCells(canvas);
     }

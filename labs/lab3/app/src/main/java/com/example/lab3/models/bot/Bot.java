@@ -18,8 +18,14 @@ public class Bot {
     public Move nextMove() {
         List<Move> routineMoves = getRoutineMoves();
         List<Move> attackMoves = getAttackMoves();
-        int size = attackMoves.size();
+        List<Move> queenAttackMoves = getQueenAttackMoves();
+        int size = queenAttackMoves.size();
         Random r = new Random();
+        if (size > 0) {
+            return queenAttackMoves.get(r.nextInt(size));
+        }
+        size = attackMoves.size();
+
         if (size > 0) {
 
             return attackMoves.get(r.nextInt(size));
@@ -59,6 +65,33 @@ public class Bot {
                             gameBoard.cellAt(j+1, i-1) == BoardCellState.OCCUPIED_BLACK &&
                             gameBoard.cellAt(j+2, i-2) == BoardCellState.FREE) {
                         moves.add(new Move(new Position(i, j), new Position(i-2, j+2)));
+                    }
+                }
+            }
+        }
+        return moves;
+    }
+    private List<Move> getQueenAttackMoves() {
+        List<Move> moves = new ArrayList<>();
+        for (int i = 0; i < gameBoard.getBoardSize(); i++) {
+            for (int j = 0; j < gameBoard.getBoardSize(); j++) {
+                if (gameBoard.cellAt(j, i) == BoardCellState.OCCUPIED_WHITE_QUEEN) {
+                    if (i + 2 < gameBoard.getBoardSize() && j + 2 < gameBoard.getBoardSize() &&
+                            gameBoard.isBlack(gameBoard.cellAt(j+1, i+1)) &&
+                            gameBoard.cellAt(j+2, i+2) == BoardCellState.FREE) {
+                        moves.add(new Move(new Position(i, j), new Position(i+2, j+2)));
+                    } else if (i - 2 > 0 && j + 2 < gameBoard.getBoardSize() &&
+                            gameBoard.isBlack(gameBoard.cellAt(j+1, i-1)) &&
+                            gameBoard.cellAt(j+2, i-2) == BoardCellState.FREE) {
+                        moves.add(new Move(new Position(i, j), new Position(i-2, j+2)));
+                    } else if (i - 2 >= 0 && j - 2 >= 0 &&
+                            gameBoard.isBlack(gameBoard.cellAt(j-1, i-1)) &&
+                            gameBoard.cellAt(j-2, i-2) == BoardCellState.FREE) {
+                        moves.add(new Move(new Position(i, j), new Position(i-2,j-2)));
+                    } else if (i + 2 < gameBoard.getBoardSize() && j - 2 >= 0 &&
+                            gameBoard.isBlack(gameBoard.cellAt(j-1, i+1)) &&
+                            gameBoard.cellAt(j-2, i+2) == BoardCellState.FREE) {
+                        moves.add(new Move(new Position(i, j), new Position(i+2,j-2)));
                     }
                 }
             }
