@@ -1,19 +1,19 @@
 package com.example.lab3.models;
 
 public class Position {
-    public int x;
-    public int y;
+    private int x;
+    private int y;
 
     public Position(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public static Position toPosition(float x, float y, int fieldSize, int cellSize) {
-        Position res = new Position((int) (x / cellSize), (int) (y / cellSize));
-        if (res.x >= fieldSize || res.y >= fieldSize)
-            return null;
-        return res;
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return y;
     }
 
     @Override

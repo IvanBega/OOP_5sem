@@ -33,14 +33,14 @@ public class GameBoardController {
         }
         Position pos = getCellPositionByCoords((int)x, (int)y);
         if (selectedCellPos != null) {
-            if (gameBoard.cellAt(pos.y,pos.x) == BoardCellState.OCCUPIED_BLACK) {
-                selectedCellPos = new Position(pos.x, pos.y);
+            if (gameBoard.cellAt(pos.getY(),pos.getX()) == BoardCellState.OCCUPIED_BLACK) {
+                selectedCellPos = new Position(pos.getX(), pos.getY());
                 return;
             }
             analyzeMove(selectedCellPos, pos);
             selectedCellPos = null;
         } else {
-                selectedCellPos = new Position(pos.x, pos.y);
+                selectedCellPos = new Position(pos.getX(), pos.getY());
         }
     }
     private void analyzeMove(Position from, Position to) {

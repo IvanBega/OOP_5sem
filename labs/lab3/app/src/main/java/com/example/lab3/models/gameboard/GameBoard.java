@@ -124,18 +124,18 @@ public class GameBoard {
         return cellSizePx;
     }
     public void performMove(Move move, MoveType type) {
-        BoardCellState checkerType = cells[move.getFrom().y][move.getFrom().x];
+        BoardCellState checkerType = cells[move.getFrom().getY()][move.getFrom().getX()];
         boolean isAttacking = isMoveAttacking(move.getFrom(), move.getTo());
-        if (move.getTo().y == 0 && isBlack(checkerType)) {
+        if (move.getTo().getY() == 0 && isBlack(checkerType)) {
             checkerType = BoardCellState.OCCUPIED_BLACK_QUEEN;
         }
-        if (move.getTo().y == boardSize - 1 && isWhite(checkerType)) {
+        if (move.getTo().getY() == boardSize - 1 && isWhite(checkerType)) {
             checkerType = BoardCellState.OCCUPIED_WHITE_QUEEN;
         }
         if (isAttacking) {
-            cells[move.getFrom().y][move.getFrom().x] = BoardCellState.FREE;
-            cells[(move.getFrom().y + move.getTo().y) / 2][(move.getFrom().x + move.getTo().x) / 2] = BoardCellState.FREE;
-            cells[move.getTo().y][move.getTo().x] = checkerType;
+            cells[move.getFrom().getY()][move.getFrom().getX()] = BoardCellState.FREE;
+            cells[(move.getFrom().getY() + move.getTo().getY()) / 2][(move.getFrom().getX() + move.getTo().getX()) / 2] = BoardCellState.FREE;
+            cells[move.getTo().getY()][move.getTo().getX()] = checkerType;
 
             if (isWhite(checkerType)) {
                 blackCheckers--;
@@ -143,8 +143,8 @@ public class GameBoard {
                 whiteCheckers--;
             }
         } else {
-            cells[move.getFrom().y][move.getFrom().x] = BoardCellState.FREE;
-            cells[move.getTo().y][move.getTo().x] = checkerType;
+            cells[move.getFrom().getY()][move.getFrom().getX()] = BoardCellState.FREE;
+            cells[move.getTo().getY()][move.getTo().getX()] = checkerType;
         }
 
         System.out.println("White = " + whiteCheckers + " | Black = " + blackCheckers);
@@ -154,51 +154,51 @@ public class GameBoard {
                 canAttackBackward(from, to);
     }
     public boolean canGoForward(Position from, Position to) {
-        if (cells[from.y][from.x] == BoardCellState.FREE ||
-            isWhite(cells[from.y][from.x])) return false;
-        if (cells[to.y][to.x] != BoardCellState.FREE) return false;
-        if (from.y - 1 != to.y) return false;
-        if (from.x + 1 != to.x && from.x - 1 != to.x) return false;
+        if (cells[from.getY()][from.getX()] == BoardCellState.FREE ||
+            isWhite(cells[from.getY()][from.getX()])) return false;
+        if (cells[to.getY()][to.getX()] != BoardCellState.FREE) return false;
+        if (from.getY() - 1 != to.getY()) return false;
+        if (from.getX() + 1 != to.getX() && from.getX() - 1 != to.getX()) return false;
         return true;
     }
     public boolean canGoBackward(Position from, Position to) {
-        if (cells[from.y][from.x] != BoardCellState.OCCUPIED_BLACK_QUEEN) return false;
-        if (cells[to.y][to.x] != BoardCellState.FREE) return false;
-        if (from.y + 1 != to.y) return false;
-        if (from.x - 1 != to.x && from.x + 1 != to.x) return false;
+        if (cells[from.getY()][from.getX()] != BoardCellState.OCCUPIED_BLACK_QUEEN) return false;
+        if (cells[to.getY()][to.getX()] != BoardCellState.FREE) return false;
+        if (from.getY() + 1 != to.getY()) return false;
+        if (from.getX() - 1 != to.getX() && from.getX() + 1 != to.getX()) return false;
         return true;
     }
     public boolean canAttackForward(Position from, Position to) {
         MoveType type = MoveType.PLAYER;
-        if (isWhite(cells[from.y][from.x])) {
+        if (isWhite(cells[from.getY()][from.getX()])) {
             type = MoveType.BOT;
         }
-        if (from.y - 2 != to.y) return false;
-        if (from.x + 2 != to.x && from.x - 2 != to.x) return false;
+        if (from.getY() - 2 != to.getY()) return false;
+        if (from.getX() + 2 != to.getX() && from.getX() - 2 != to.getX()) return false;
         if (type == MoveType.PLAYER) {
-            if (from.x + 2 == to.x && isWhite(cells[from.y - 1][from.x + 1])) return true;
-            if (from.x - 2 == to.x && isWhite(cells[from.y - 1][from.x - 1])) return true;
+            if (from.getX() + 2 == to.getX() && isWhite(cells[from.getY() - 1][from.getX() + 1])) return true;
+            if (from.getX() - 2 == to.getX() && isWhite(cells[from.getY() - 1][from.getX() - 1])) return true;
         } else {
-            if (cells[from.y][from.x] != BoardCellState.OCCUPIED_WHITE_QUEEN) return false;
-            if (from.x + 2 == to.x && isBlack(cells[from.y - 1][from.x + 1])) return true;
-            if (from.x - 2 == to.x && isBlack(cells[from.y - 1][from.x - 1])) return true;
+            if (cells[from.getY()][from.getX()] != BoardCellState.OCCUPIED_WHITE_QUEEN) return false;
+            if (from.getX() + 2 == to.getX() && isBlack(cells[from.getY() - 1][from.getX() + 1])) return true;
+            if (from.getX() - 2 == to.getX() && isBlack(cells[from.getY() - 1][from.getX() - 1])) return true;
         }
 
         return false;
 
     }
     public boolean canAttackBackward(Position from, Position to) {
-        if (cells[from.y][from.x] == BoardCellState.OCCUPIED_BLACK) return false;
-        if (cells[from.y][from.x] == BoardCellState.FREE) return false;
-        if (from.y + 2 != to.y) return false;
-        if (from.x - 2 != to.x && from.x + 2 != to.x) return false;
-        if (cells[from.y][from.x] == BoardCellState.OCCUPIED_BLACK_QUEEN) {
-            if (from.x - 2 == to.x && isWhite(cells[from.y + 1][from.x - 1])) return true;
-            if (from.x + 2 == to.x && isWhite(cells[from.y + 1][from.x + 1])) return true;
+        if (cells[from.getY()][from.getX()] == BoardCellState.OCCUPIED_BLACK) return false;
+        if (cells[from.getY()][from.getX()] == BoardCellState.FREE) return false;
+        if (from.getY() + 2 != to.getY()) return false;
+        if (from.getX() - 2 != to.getX() && from.getX() + 2 != to.getX()) return false;
+        if (cells[from.getY()][from.getX()] == BoardCellState.OCCUPIED_BLACK_QUEEN) {
+            if (from.getX() - 2 == to.getX() && isWhite(cells[from.getY() + 1][from.getX() - 1])) return true;
+            if (from.getX() + 2 == to.getX() && isWhite(cells[from.getY() + 1][from.getX() + 1])) return true;
         } else {
             // bot
-            if (from.x - 2 == to.x && isBlack(cells[from.y + 1][from.x - 1])) return true;
-            if (from.x + 2 == to.x && isBlack(cells[from.y + 1][from.x + 1])) return true;
+            if (from.getX() - 2 == to.getX() && isBlack(cells[from.getY() + 1][from.getX() - 1])) return true;
+            if (from.getX() + 2 == to.getX() && isBlack(cells[from.getY() + 1][from.getX() + 1])) return true;
         }
 
         return false;
